@@ -1,4 +1,6 @@
 import './App.css';
+import BarChart from './Bars/BarChart';
+
 
 function App() {
   return (
@@ -11,9 +13,9 @@ function App() {
           <button id='bubble_btn' className='btn'>Bubble Sort</button>
         </div>
 
-        <div className='bar_container'>
-          <div className='bar'></div>
-        </div>
+        {/* <div className='bar_container'> */}
+        <BarChart />
+        {/* </div> */}
 
       </div>
 

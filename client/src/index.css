@@ -37,4 +37,13 @@ code {
 .bar_container {
   border: solid greenyellow;
   width: 90vw;
+  height: 70vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.bar {
+  width: 4vw;
+  margin: 10px;
+  background-color: rebeccapurple;
 }
