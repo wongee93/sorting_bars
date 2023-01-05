@@ -27,15 +27,18 @@ code {
   height: 50px;
   font-size: 20px;
   margin: 50px;
+  background-color: skyblue;
 }
 
 .button_container {
-  border: solid palevioletred;
+  /* border: solid gray; */
+  background-color: azure;
   width: 90vw;
 }
 
 .bar_container {
-  border: solid greenyellow;
+  /* border: solid gray; */
+  background-color: lavenderblush;
   width: 90vw;
   height: 70vh;
   display: flex;
@@ -44,6 +47,6 @@ code {
 
 .bar {
   width: 4vw;
-  margin: 10px;
-  background-color: rebeccapurple;
+  margin: 0.5vw;
+  background-color: palevioletred;
 }
