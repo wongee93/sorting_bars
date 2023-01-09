@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from "react-redux";
+import { setRandomArray } from "../store/randomArraySlice";
 
 function randomNum(min, max) {
     return (Math.floor(Math.random() * (max - min + 1)) + min);
@@ -14,13 +16,18 @@ function createRandomArray() {
 
 function BarChart() {
     const [barHeights, setBarHeights] = useState([]);
+    const dispatch = useDispatch();
+    const randomArray = useSelector((state) => state.randomArray);
 
     useEffect(() => {
-        const randomArray = createRandomArray();
-        setBarHeights(randomArray);
-    }, []);
+        dispatch(setRandomArray(createRandomArray()));
+    }, [dispatch]);
 
-    const barElements = barHeights.map((height, index) => (
+    useEffect(() => {
+        setBarHeights(randomArray);
+    }, [randomArray]);
+
+    const barElements = barHeights.length > 0 && barHeights.map((height, index) => (
         <div key={index} style={{ height: height * 30 + 'px' }} className="bar" />
     ));
 
