@@ -1,36 +1,48 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
+import resetArray from '../SortLogic/resetArray';
 
-const bubbleSorting = (state) => {
-    const array = [...state];
+export const initialState = resetArray(20);
 
-    for (let i = 0; i < array.length; i++) {
-        for (let j = 0; j < array.length - (i + 1); j++) {
-            if (array[j] > array[j + 1]) {
-                let temp = array[j];
-                array[j] = array[j + 1];
-                array[j + 1] = temp;
-            }
-        }
-    }
-
-    return array;
-};
-
-const initialState = [];
-
-const randomArraySlice = createSlice({
-    name: "randomArray",
+export const randomArraySlice = createSlice({
+    name: 'randomArray',
     initialState,
     reducers: {
-        setRandomArray: (state, action) => {
-            return action.payload;
+        bubCompareReducer: (state, action) => {
+            const { selectedIdx, compareIdx, defaultIdx, swapIdx } = action.payload;
+            if (selectedIdx >= 0) {
+                state[selectedIdx].state = { color: '#FF5675' };
+            }
+
+            if (compareIdx >= 0) {
+                state[compareIdx].state = { color: '#F06E6E' };
+            }
+
+            if (swapIdx >= 0) {
+                let temp = { ...state[selectedIdx] };
+                state[selectedIdx] = state[swapIdx];
+                state[selectedIdx].state = { color: '#7878FF' };
+                state[swapIdx] = temp;
+            }
+
+            if (defaultIdx >= 0) {
+                state[defaultIdx].state = { color: 'pink' };
+            }
         },
-        bubbleSort: (state) => {
-            // console.log('bubble sort working')
-            return bubbleSorting(state);
-        }
+        initialArrayReducer: () => {
+            const initialRandomArray = resetArray(20);
+            return initialRandomArray;
+        },
+        reset: () => {
+            const resetRandomArray = resetArray(20);
+            return resetRandomArray;
+        },
     },
 });
 
-export const { setRandomArray, bubbleSort } = randomArraySlice.actions;
-export default randomArraySlice;
+export const {
+    bubCompareReducer,
+    initialArrayReducer,
+    reset
+} = randomArraySlice.actions;
+
+export default randomArraySlice.reducer;

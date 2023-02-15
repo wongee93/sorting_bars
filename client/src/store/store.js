@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import randomArraySlice from "./randomArraySlice";
+import randomArraySliceReducer from "./randomArraySlice";
 
 export const store = configureStore({
     reducer: {
-        randomArray: randomArraySlice.reducer,
+        randomArray: randomArraySliceReducer
     },
 });
