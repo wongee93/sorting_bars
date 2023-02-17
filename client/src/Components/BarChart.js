@@ -18,19 +18,31 @@ const BarChart = () => {
     return (
         <BarWrapper>
             {returnedArrayFromReducers && returnedArrayFromReducers.map((val, idx) => (
-                <ArrayBar
-                    key={idx}
-                    styleBar={{
-                        height: val.value,
-                        backgroundColor: val.state.color,
-                    }}
-                />
+                <ArrayBarWrapper>
+                    {val.value / 30}
+                    <ArrayBar
+                        key={idx}
+                        styleBar={{
+                            height: val.value,
+                            backgroundColor: val.state.color,
+                        }}
+                    />
+                </ArrayBarWrapper>
             ))}
         </BarWrapper>
     );
 };
 
 export default BarChart;
+
+const ArrayBarWrapper = styled.span`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: gray;
+`
 
 const BarWrapper = styled.div`
   width: 80vw;

@@ -4,9 +4,11 @@ function randomNum(min, max) {
 
 function resetArray(num) {
     const array = [];
-    for (let i = 0; i < num; i++) {
+    while (array.length < num) {
         let num = randomNum(1, 20) * 30;
-        array.push({ value: num, state: { color: 'pink' } });
+        if (!array.some(item => item.value === num)) {
+            array.push({ value: num, state: { color: 'pink' } });
+        }
     }
     return array;
 }
