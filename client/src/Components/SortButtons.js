@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { bubCompareReducer, reset } from '../store/randomArraySlice';
 import bubbleSort from '../SortLogic/bubbleSort';
+import mergeSort from '../SortLogic/mergeSort'
 
 const SortButtons = () => {
     const [sortSpeed, setSortSpeed] = useState(50);
@@ -27,6 +28,14 @@ const SortButtons = () => {
     };
 
     const handleMergeSort = () => {
+        const stateQueue = mergeSort([...randomArray], 0, randomArray.length - 1);
+        let timer = sortSpeed;
+        for (let i = 0; i < stateQueue.length; i++) {
+            setTimeout(() => {
+                dispatch(bubCompareReducer(stateQueue[i]));
+            }, timer);
+            timer += sortSpeed;
+        }
     };
 
     return (
