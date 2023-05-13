@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+# Sorting Bars
+높이가 랜덤하게 주어지는 Bar들을 다양한 정렬 알고리즘을 통해 정렬하는 과정을 시각적으로 확인할 수 있습니다.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 배포주소
+https://sorting-bars.vercel.app/
 
-## Available Scripts
+## 기능소개
+- 각 Bar들의 높이를 숫자로 표시하여 정렬과정을 제대로 볼 수 있도록 하였습니다.
+- 비교 대상이 되는 Bar와 비교를 마친 Bar의 색상을 다르게하여 시각적인 효과를 주었습니다.
+- Redux를 통해 Bar에 대한 randomArray를 전역에서 관리하였습니다.
 
-In the project directory, you can run:
+### Reset
+- 1부터 20까지의 높이를 가진 Bar들을 랜덤하게 생성합니다.
+- 중복되는 높이가 없도록 처리하였습니다.
 
-### `npm start`
+![reset](https://github.com/wongee93/sorting_bars/assets/107908373/75027773-c486-44b2-81b3-1c758d0f1f67)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Bubble Sort
+- 서로 인접한 요소들의 크기를 비교하여 정렬하는 알고리즘입니다.
+- 1회전 후 가장 큰 요소가 맨 뒤로 정렬되기 때문에 1회전할때 마다 정렬이 필요한 데이터가 1개씩 줄어듦.
+ 
+![bubbleSort](https://github.com/wongee93/sorting_bars/assets/107908373/03ac83af-85e9-4263-a67c-c5774a6b9f50)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Merge Sort
+- 요소들을 분할할 수 없을 때 까지 같은 크기의 배열로 반복적으로 2분할하여 정렬한 뒤 이후에 다시 병합하여 정렬하는 방식의 알고리즘입니다.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![mergeSort](https://github.com/wongee93/sorting_bars/assets/107908373/7dc74b6c-2326-42ae-af5b-aecde670297e)
