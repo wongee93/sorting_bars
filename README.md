@@ -4,6 +4,10 @@
 ## 배포주소
 https://sorting-bars.vercel.app/
 
+## 사용스택
+<img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> <img src="https://img.shields.io/badge/redux-764ABC?style=for-the-badge&logo=redux&logoColor=black"> <img src="https://img.shields.io/badge/styledcomponents-DB7093?style=for-the-badge&logo=styled-components&logoColor=black"> <img src="https://img.shields.io/badge/vercel-000000?style=for-the-badge&logo=vercel&logoColor=white"> 
+
+
 ## 기능소개
 - 각 Bar들의 높이를 숫자로 표시하여 정렬과정을 제대로 볼 수 있도록 하였습니다.
 - 비교 대상이 되는 Bar와 비교를 마친 Bar의 색상을 다르게하여 시각적인 효과를 주었습니다.
